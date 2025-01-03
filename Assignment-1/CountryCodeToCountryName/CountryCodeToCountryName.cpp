@@ -23,7 +23,7 @@ pair<string, string> extractCountryCodeAndName(const string& line) {
 int main() {
     ifstream countryFile("countries.json");
     if (!countryFile) {
-        cerr << "Error: Unable to open the JSON file." << endl;
+        cout << "Unable to open the JSON file." << endl;
         return 1;
     }
 
@@ -45,9 +45,9 @@ int main() {
     cin >> inputCountryCode;
 
     if (countryCodeToCountryName.count(inputCountryCode)) {
-        cout << "Country: " << countryCodeToCountryName[inputCountryCode] << endl;
+        cout << countryCodeToCountryName[inputCountryCode] << endl;
     } else {
-        cout << "Invalid country code entered." << endl;
+        cout << "Invalid country code entered" << endl;
     }
 
     return 0;
