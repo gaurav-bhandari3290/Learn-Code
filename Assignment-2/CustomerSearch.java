@@ -1,32 +1,35 @@
 public class CustomerSearch
+{
+    public List<Customer> Search(string searchTerm, string searchField)
     {
-    public List < Customer > SearchByCountry(string country)
-    {
-        var query = from customer in database.customers where customer.Country.Contains(country) orderby customer.CustomerID ascending select customer;
+        var query = from customer in database.customers where (searchField == "Country" && customer.Country.Contains(searchTerm)) || (searchField == "CompanyName" && customer.CompanyName.Contains(searchTerm)) || (searchField == "ContactName" && customer.ContactName.Contains(searchTerm)) orderby customer.CustomerID ascending select customer;
         return query.ToList();
     }
 
-    public List < Customer > SearchByCompanyName(string company)
+    public List<Customer> SearchByCountry(string country)
     {
-        var query = from customer in database.customers where customer.Country.Contains(company) orderby customer.CustomerID ascending select customer;
-        return query.ToList();
+        return Search(country, "Country");
     }
 
-    public List < Customer > SearchByContact(string contact)
+    public List<Customer> SearchByCompanyName(string company)
     {
-        var query = from customer in database.customers where customer.Country.Contains(contact) orderby customer.CustomerID ascending select customer;
-        return query.ToList();
+        return Search(company, "CompanyName");
+    }
+
+    public List<Customer> SearchByContact(string contact)
+    {
+        return Search(contact, "ContactName");
     }
 }
 
-public class ExportCSV
+public class Export
 {
-    public string ExportToCSV(List < Customer > data)
+    public string ExportToCSV(List<Customer> data)
     {
-        StringBuilder csvString = newStringBuilder();
-        foreach(var item in data)
+        StringBuilder csvString = new StringBuilder();
+        foreach (var item in data)
         {
-            csvString.AppendFormat("{0},{1}, {2}, {3}", item.CustomerID, item.CompanyName, item.ContactName, item.Country);
+            csvString.AppendFormat("{0},{1},{2},{3}", item.CustomerID, item.CompanyName, item.ContactName, item.Country);
             csvString.AppendLine();
         }
         return csvString.ToString();

@@ -10,12 +10,14 @@ class Book {
     function getAuthor() {
         return "John Doe";
     }
- 
-    function turnPage() {
+}
+
+class Reader {
+    public function turnPage() {
         // pointer to next page
     }
- 
-    function getCurrentPage() {
+
+    public function getCurrentPage() {
         return "current page content";
     }
 }
