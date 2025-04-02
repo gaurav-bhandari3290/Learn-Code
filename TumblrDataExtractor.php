@@ -8,18 +8,16 @@ class InputHandler {
 }
 
 class RangeValidator {
-    public function validate(string $range): array {
+    public function validate(string $range): bool {
         $parts = explode('-', $range);
-        if (count($parts) !== 2 || !is_numeric($parts[0]) || !is_numeric($parts[1])) {
-            throw new InvalidArgumentException("Invalid range format. Use 'start-end' (e.g., 1-10).\n");
-        }
+        return count($parts) === 2 && is_numeric($parts[0]) && is_numeric($parts[1]) && intval($parts[0]) >= 1 && intval($parts[1]) >= intval($parts[0]);
+    }
 
+    public function parseRange(string $range): array {
+        $parts = explode('-', $range);
+        
         // Convert both parts to integers
-        [$start, $end] = array_map('intval', $parts);
-        if ($start < 1 || $end < $start) {
-            throw new InvalidArgumentException("Invalid range values. Start must be >= 1, and End must be >= Start.\n");
-        }
-        return [$start, $end];
+        return array_map('intval', $parts);
     }
 }
 
@@ -114,8 +112,13 @@ class App {
         try {
             $blog = $this->input->get("Enter the Tumblr blog name:");
             $range = $this->input->get("Enter the range (e.g., 1-10):");
-            [$start, $end] = $this->validator->validate($range);
+            
+            if (!$this->validator->validate($range)) {
+                throw new InvalidArgumentException("Invalid range format. Use 'start-end' (e.g., 1-10) and ensure valid values.");
+            }
 
+            [$start, $end] = $this->validator->parseRange($range);
+            
             $api = new TumblrAPI($blog, $start, $end);
             $response = $api->fetchData();
 
