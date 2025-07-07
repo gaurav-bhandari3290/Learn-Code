@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/variables.css" />
+  <link rel="stylesheet" href="../../assets/css/base.css" />
+ 
+</head>
+
+<body>
+
+  <header class="site-header bg-white border-bottom">
+    <nav class="navbar navbar-expand-md navbar-light container-fluid px-4 py-2">
+
+      <!-- Left: Logo -->
+      <a class="navbar-brand" href="home.html">
+        <img src="../../assets/images/logo.png" alt="Logo" class="logo-img" height="60">
+      </a>
+
+      <!-- Toggler for mobile -->
+      <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Center: Navigation Links -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link text-start nav-custom px-3 " href="home.html">Server Status</a></li>
+          <li class="nav-item"><a class="nav-link text-start nav-custom px-3" href="API.html">API Details</a></li>
+          <li class="nav-item"><a class="nav-link text-start nav-custom px-3 " href="updateAPI.html">API Update</a></li>
+          <li class="nav-item"><a class="nav-link text-start nav-custom px-3" href="add-category.html">Manage Category</a></li>
+          <li class="nav-item"><a class="nav-link text-start nav-custom px-3 active" href="manage-keyword.html">Manage Keyword</a>
+          </li>
+          <li class="nav-item"><a class="nav-link text-start nav-custom px-3" href="reported-articles.html">Reported Articles</a>
+          </li>
+          <li class="nav-item d-block d-lg-none ms-3 text-start mt-2"><a href="../../index.html" class="btn btn-primary btn-primary-width">Logout</a></li>
+        </ul>
+      </div>
+
+      <!-- Right: Logout button -->
+      <div class="d-none d-md-block">
+        <a href="../../index.html" class="btn btn-primary">Logout</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <h2 class="text-center my-4">Add <span class="text-highlight">Keywords</span> to Stop Displaying Related Articles
+      </h2>
+
+      <div class="row justify-content-center mb-4">
+        <div class="col-md-6 d-flex gap-2">
+          <input type="text" class="form-control" placeholder="Enter keyword">
+          <button class="btn btn-primary btn-primary-width" data-bs-toggle="modal"
+            data-bs-target="#confirmModal">Add</button>
+        </div>
+      </div>
+
+      <!-- Confirmation Modal -->
+      <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="confirmModalLabel">Keyword Added</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              The new Keyword has been successfully added.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary btn-primary-width" data-bs-dismiss="modal">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered align-middle text-center table-width">
+          <thead class="table-light">
+            <tr>
+              <th>Keyword</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody class="table-light">
+            <tr>
+              <td>Politics</td>
+              <td>
+                <button class="btn btn-sm btn-primary btn-primary-width me-2" data-bs-toggle="modal"
+                  data-bs-target="#EditModal">Edit</button>
+                <button class="btn btn-sm btn-disabled" data-bs-toggle="modal"
+                  data-bs-target="#deleteModal">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Crime</td>
+              <td>
+                <button class="btn btn-sm btn-primary btn-primary-width me-2" data-bs-toggle="modal"
+                  data-bs-target="#EditModal">Edit</button>
+                <button class="btn btn-sm btn-disabled" data-bs-toggle="modal"
+                  data-bs-target="#deleteModal">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="modal fade" id="EditModal" tabindex="-1" aria-labelledby="sportsModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="sportsModalLabel">Edit Keyword</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <input type="text" class="form-control mb-2" placeholder="Enter keyword">
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-disabled" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary btn-primary-width" data-bs-dismiss="modal">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Keyword Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="reportSuccessLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirmModalLabel">Delete Keyword</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            The Keyword has been Deleted successfully.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary btn-primary-width" data-bs-dismiss="modal">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer-custom mt-5">
+    <div class="container d-flex justify-content-md-between justify-content-center align-items-center flex-wrap flex-md-nowrap py-3 flex-md-row flex-column">
+
+      <a href="home.html" class="footer-logo d-flex align-items-center me-3">
+        <img src="../../assets/images/logo.png" alt="Logo" class="footer-logo-img">
+      </a>
+
+      <div class="text-center flex-grow-1">
+        <small class="text-muted">&copy; 2025 News Aggregation. All rights reserved.</small>
+      </div>
+
+      <div class="social-icons d-flex gap-3 ms-3">
+        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

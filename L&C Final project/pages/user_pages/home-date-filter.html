@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/variables.css" />
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+   
+</head>
+
+<body>
+
+    <header class="site-header bg-white border-bottom">
+        <nav class="navbar navbar-expand-lg navbar-light container-fluid px-4 py-2">
+
+            <a class="navbar-brand" href="home.html">
+                <img src="../../assets/images/logo.png" alt="Logo" class="logo-img" height="60">
+            </a>
+
+            <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link text-start nav-custom px-3 active"
+                            href="home.html">Headlines</a></li>
+                    <li class="nav-item"><a class="nav-link text-start nav-custom px-3" href="saved-article.html">Saved
+                            Articles</a></li>
+                    <li class="nav-item"><a class="nav-link text-start nav-custom px-3" href="search.html">Search</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-start nav-custom px-3"
+                            href="notification.html">Notification</a></li>
+                    <li class="nav-item"><a class="nav-link text-start nav-custom px-3"
+                            href="configuration.html">Configuration</a></li>
+                    <li class="nav-item d-block d-lg-none ms-3 text-start mt-2"><a href="../../index.html" class="btn btn-primary btn-primary-width">Logout</a></li>
+                </ul>
+            </div>
+
+            <div class="d-none d-lg-block">
+                <a href="../../index.html" class="btn btn-primary">Logout</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+        <div class="container py-5">
+            <div
+                class="d-flex justify-content-between align-items-center mb-4 gap-3 flex-direction-column flex-column flex-md-row">
+                <h2 class="mb-0">Welcome to <span class="text-highlight">News Aggregator</span></h2>
+
+                <form class="filter-form d-flex flex-wrap align-items-center gap-2" action="home-date.html" method="GET"> <select
+                        class="form-select filter-select">
+                        <option selected>Date Range</option>
+                        <option>Today</option>
+                        <option>All</option>
+                    </select> <input type="date" class="form-control filter-input" placeholder="Start Date" required/> <input
+                        type="date" class="form-control filter-input" placeholder="End Date" required/>
+                    <button type="submit" class="btn date-filter-btn">Search</button>
+
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-custom mt-5">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap flex-md-nowrap py-3 ">
+
+            <a href="home.html" class="footer-logo d-flex align-items-center me-3">
+                <img src="../../assets/images/logo.png" alt="Logo" class="footer-logo-img">
+            </a>
+
+            <div class="text-center flex-grow-1">
+                <small class="text-muted">&copy; 2025 News Aggregation. All rights reserved.</small>
+            </div>
+
+            <div class="social-icons d-flex gap-3 ms-3">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>

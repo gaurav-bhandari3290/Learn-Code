@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/variables.css" />
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+   
+</head>
+
+<body>
+
+    <header class="site-header bg-white border-bottom">
+        <nav class="navbar navbar-expand-lg navbar-light container-fluid px-4 py-2">
+
+            <a class="navbar-brand" href="home.html">
+                <img src="../../assets/images/logo.png" alt="Logo" class="logo-img" height="60">
+            </a>
+
+            <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link text-start nav-custom px-3 active"
+                            href="home.html">Headlines</a></li>
+                    <li class="nav-item"><a class="nav-link text-start nav-custom px-3" href="saved-article.html">Saved
+                            Articles</a></li>
+                    <li class="nav-item"><a class="nav-link text-start nav-custom px-3" href="search.html">Search</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-start nav-custom px-3"
+                            href="notification.html">Notification</a></li>
+                    <li class="nav-item"><a class="nav-link text-start nav-custom px-3"
+                            href="configuration.html">Configuration</a></li>
+                    <li class="nav-item d-block d-lg-none ms-3 text-start mt-2"><a href="../../index.html" class="btn btn-primary btn-primary-width">Logout</a></li>
+                </ul>
+            </div>
+
+            <div class="d-none d-lg-block">
+                <a href="../../index.html" class="btn btn-primary">Logout</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+        <div class="container py-5">
+            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+                <h2 class="mb-0">Welcome to <span class="text-highlight">News Aggregator</span></h2>
+
+                <div class="d-flex gap-2 flex-wrap align-items-center">
+                    <!-- Dropdown -->
+                    <select class="form-select w-auto" onchange="location = this.value;">
+                        <option value="home.html">Today</option>
+                        <option value="home-all.html">All</option>
+                        <option value="home-date-filter.html" selected>Date Range</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row g-4" id="news-list">
+
+                <div class="col-xl-4 col-md-6">
+                    <div class="card news-card">
+                        <div class="image-wrapper">
+                            <img src="../../assets/images/icon_honors.webp" class="news-img" alt="News image">
+                            <div class="card-icons">
+                                <span class="icon-button" data-bs-toggle="modal" data-bs-target="#reportModal"
+                                    title="Report">
+                                    <i class="fas fa-flag report-icon"></i>
+                                </span>
+                                <label class="icon-button like-toggle" title="Like">
+                                    <input type="checkbox" class="like-checkbox">
+                                    <i class="fas fa-heart"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="news-content">
+                            <div class="id-date-row d-flex justify-content-between">
+                                <span>ID: 371</span>
+                                <span>June 20, 2025</span>
+                            </div>
+                            <h6 class="news-heading mt-1">Long Island Business News announces 2025 Icon Honors</h6>
+                            <span class="news-excerpt mb-3">Recognizing Long Island business leaders over 60 years
+                                old.</span>
+                            <p><span class="card-category">Business</span></p>
+                            <p><strong>Source:</strong> <a href="https://libn.com" target="_blank">libn.com</a></p>
+                            <p class="mb-3"><strong>URL:</strong> <a
+                                    href="https://libn.com/2025/06/20/long-island-business-news-announces-2025-icon-honors/"
+                                    target="_blank">libn.com/news-1</a></p>
+                            <button class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#saveSuccessModal">Add to
+                                Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-6">
+                    <div class="card news-card">
+                        <div class="image-wrapper">
+                            <img src="../../assets/images/icc.webp" class="news-img" alt="News image">
+                            <div class="card-icons">
+                                <span class="icon-button" data-bs-toggle="modal" data-bs-target="#reportModal"
+                                    title="Report">
+                                    <i class="fas fa-flag report-icon"></i>
+                                </span>
+                                <label class="icon-button like-toggle" title="Like">
+                                    <input type="checkbox" class="like-checkbox">
+                                    <i class="fas fa-heart"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="news-content">
+                            <div class="id-date-row d-flex justify-content-between">
+                                <span>ID: 742</span>
+                                <span>June 20, 2025</span>
+                            </div>
+                            <h6 class="news-heading mt-1">World Test Championship final: South Africa defeats Australia
+                                at Lord’s</h6>
+                            <span class="news-excerpt mb-3">South Africa clinches maiden WTC title by 5 wickets.</span>
+                            <p><span class="card-category">Sports</span></p>
+                            <p><strong>Source:</strong> <a href="https://en.wikipedia.org"
+                                    target="_blank">en.wikipedia.org</a></p>
+                            <p class="mb-3"><strong>URL:</strong> <a
+                                    href="https://en.wikipedia.org/wiki/2025_ICC_World_Test_Championship_final?utm_source"
+                                    target="_blank">en.wikipedia.org/news-2</a></p>
+                            <button class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#saveSuccessModal">Add to
+                                Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-6">
+                    <div class="card news-card">
+                        <div class="image-wrapper">
+                            <img src="../../assets/images/Marlee_matlin.jpg" class="news-img" alt="News image">
+                            <div class="card-icons">
+                                <span class="icon-button" data-bs-toggle="modal" data-bs-target="#reportModal"
+                                    title="Report">
+                                    <i class="fas fa-flag report-icon"></i>
+                                </span>
+                                <label class="icon-button like-toggle" title="Like">
+                                    <input type="checkbox" class="like-checkbox">
+                                    <i class="fas fa-heart"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="news-content">
+                            <div class="id-date-row d-flex justify-content-between">
+                                <span>ID: 123</span>
+                                <span>June 20, 2025</span>
+                            </div>
+                            <h6 class="news-heading mt-1">Marlee Matlin featured in new documentary “Not Alone Anymore”
+                            </h6>
+                            <span class="news-excerpt mb-3">Deaf actor shares personal and career journey.</span>
+                            <p><span class="card-category">Entertainment</span></p>
+                            <p><strong>Source:</strong> <a href="https://www.usnews.com" target="_blank">usnews.com</a>
+                            </p>
+                            <p class="mb-3"><strong>URL:</strong> <a
+                                    href="https://www.usnews.com/news/entertainment/articles/2025-06-20/marlee-matlin-tells-her-story-in-an-intimate-and-groundbreaking-documentary"
+                                    target="_blank">usnews.com/news-7</a></p>
+                            <button class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#saveSuccessModal">Add to
+                                Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-6">
+                    <div class="card news-card">
+                        <div class="image-wrapper">
+                            <img src="../../assets/images/fortnite.jpg" class="news-img" alt="News image">
+                            <div class="card-icons">
+                                <span class="icon-button" data-bs-toggle="modal" data-bs-target="#reportModal"
+                                    title="Report">
+                                    <i class="fas fa-flag report-icon"></i>
+                                </span>
+                                <label class="icon-button like-toggle" title="Like">
+                                    <input type="checkbox" class="like-checkbox">
+                                    <i class="fas fa-heart"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="news-content">
+                            <div class="id-date-row d-flex justify-content-between">
+                                <span>ID: 444</span>
+                                <span>June 20, 2025</span>
+                            </div>
+                            <h6 class="news-heading mt-1">Fortnite free skins – esports update for June 2025</h6>
+                            <span class="news-excerpt mb-3">Super‑Season content revealed in Chapter 6 Season 3.</span>
+                            <p><span class="card-category">Sports</span></p>
+                            <p><strong>Source:</strong> <a href="https://timesofindia.indiatimes.com"
+                                    target="_blank">timesofindia.com</a></p>
+                            <p class="mb-3"><strong>URL:</strong> <a
+                                    href="https://timesofindia.indiatimes.com/sports/esports/news/all-free-fortnite-skins-in-june-2025-and-how-to-unlock-them/articleshow/121971999.cms"
+                                    target="_blank">timesofindia.com/news-8</a></p>
+                            <button class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#saveSuccessModal">Add to
+                                Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-6">
+                    <div class="card news-card">
+                        <div class="image-wrapper">
+                            <img src="../../assets/images/AICPA.jpg" class="news-img" alt="News image">
+                            <div class="card-icons">
+                                <span class="icon-button" data-bs-toggle="modal" data-bs-target="#reportModal"
+                                    title="Report">
+                                    <i class="fas fa-flag report-icon"></i>
+                                </span>
+                                <label class="icon-button like-toggle" title="Like">
+                                    <input type="checkbox" class="like-checkbox">
+                                    <i class="fas fa-heart"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="news-content">
+                            <div class="id-date-row d-flex justify-content-between">
+                                <span>ID: 175</span>
+                                <span>June 20, 2025</span>
+                            </div>
+                            <h6 class="news-heading mt-1">The Top Tech at AICPA Engage 2025 – The Accounting Technology
+                                Lab</h6>
+                            <span class="news-excerpt mb-3">CPA tech trends discussed at AICPA Engage conference.</span>
+                            <p><span class="card-category">Technology</span></p>
+                            <p><strong>Source:</strong> <a href="https://www.cpapracticeadvisor.com"
+                                    target="_blank">cpapracticeadvisor.com</a></p>
+                            <p class="mb-3"><strong>URL:</strong> <a
+                                    href="https://www.cpapracticeadvisor.com/2025/06/20/the-top-tech-at-aicpa-engage-2025-the-accounting-technology-lab-podcast-june-2025/163370/"
+                                    target="_blank">cpapracticeadvisor.com/news-18</a></p>
+                            <button class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#saveSuccessModal">Add to
+                                Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-6">
+                    <div class="card news-card">
+                        <div class="image-wrapper">
+                            <img src="../../assets/images/schema.png" class="news-img" alt="News image">
+                            <div class="card-icons">
+                                <span class="icon-button" data-bs-toggle="modal" data-bs-target="#reportModal"
+                                    title="Report">
+                                    <i class="fas fa-flag report-icon"></i>
+                                </span>
+                                <label class="icon-button like-toggle" title="Like">
+                                    <input type="checkbox" class="like-checkbox">
+                                    <i class="fas fa-heart"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="news-content">
+                            <div class="id-date-row d-flex justify-content-between">
+                                <span>ID: 106</span>
+                                <span>June 20, 2025</span>
+                            </div>
+                            <h6 class="news-heading mt-1">The Conversation: The month’s New Distribution Capability
+                                schema</h6>
+                            <span class="news-excerpt mb-3">Industry insiders dissect NDC's impact on partnerships and
+                                payments.</span>
+                            <p><span class="card-category">Business</span></p>
+                            <p><strong>Source:</strong> <a href="https://www.businesstravelnews.com"
+                                    target="_blank">businesstravelnews.com</a></p>
+                            <p class="mb-3"><strong>URL:</strong> <a
+                                    href="https://www.businesstravelnews.com/BTN-Next/The-Conversation/June-2025"
+                                    target="_blank">businesstravelnews.com/news-16</a></p>
+                            <button class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#saveSuccessModal">Add to
+                                Save</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Save Success Modal -->
+                <div class="modal fade" id="saveSuccessModal" tabindex="-1" aria-labelledby="saveSuccessLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="confirmModalLabel">Article Saved</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                The Article has been Saved successfully.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary w-25" data-bs-dismiss="modal">OK</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Report Success Modal -->
+                <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportSuccessLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="confirmModalLabel">Article Reported</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                The Article has been Reported successfully.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary w-25" data-bs-dismiss="modal">OK</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Pagination -->
+            <nav class="mt-5">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="home-date.html">Previous</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="home-date.html">1</a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link" href="home-date-2.html">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="home-date-3.html">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="home-date-3.html">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </main>
+    <footer class="footer-custom mt-5">
+        <div class="container d-flex justify-content-md-between justify-content-center align-items-center flex-wrap flex-md-nowrap py-3 flex-md-row flex-column">
+
+            <a href="home.html" class="footer-logo d-flex align-items-center me-3">
+                <img src="../../assets/images/logo.png" alt="Logo" class="footer-logo-img">
+            </a>
+
+            <div class="text-center flex-grow-1">
+                <small class="text-muted">&copy; 2025 News Aggregation. All rights reserved.</small>
+            </div>
+
+            <div class="social-icons d-flex gap-3 ms-3">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
